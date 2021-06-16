@@ -1,18 +1,78 @@
 <template>
-  <div class="home">
+  <div class="m-auto">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <event-card :events="events"></event-card>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import EventCard from "@/components/EventCard.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    EventCard,
+  },
+  computed: {
+    events() {
+      return [
+        {
+          id: 5928101,
+          category: "animal welfare",
+          title: "Cat Adoption Day",
+          description: "Find your new feline friend at this event.",
+          location: "Meow Town",
+          date: "January 28, 2022",
+          time: "12:00",
+          petsAllowed: true,
+          organizer: "Kat Laydee",
+        },
+        {
+          id: 5928101,
+          category: "animal welfare",
+          title: "Cat Adoption Day",
+          description: "Find your new feline friend at this event.",
+          location: "Meow Town",
+          date: "January 28, 2022",
+          time: "12:00",
+          petsAllowed: true,
+          organizer: "Kat Laydee",
+        },
+        {
+          id: 5928101,
+          category: "animal welfare",
+          title: "Cat Adoption Day",
+          description: "Find your new feline friend at this event.",
+          location: "Meow Town",
+          date: "January 28, 2022",
+          time: "12:00",
+          petsAllowed: true,
+          organizer: "Kat Laydee",
+        },
+        {
+          id: 5928101,
+          category: "animal welfare",
+          title: "Cat Adoption Day",
+          description: "Find your new feline friend at this event.",
+          location: "Meow Town",
+          date: "January 28, 2022",
+          time: "12:00",
+          petsAllowed: true,
+          organizer: "Kat Laydee",
+        },
+        {
+          id: 5928101,
+          category: "animal welfare",
+          title: "Cat Adoption Day",
+          description: "Find your new feline friend at this event.",
+          location: "Meow Town",
+          date: "January 28, 2022",
+          time: "12:00",
+          petsAllowed: true,
+          organizer: "Kat Laydee",
+        },
+      ];
+    },
   },
 };
 </script>
