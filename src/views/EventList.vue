@@ -6,72 +6,28 @@
 
 <script>
 import EventCard from "@/components/EventCard.vue";
+import { mapActions } from "vuex";
 
 export default {
   name: "Home",
   components: {
     EventCard,
   },
-  computed: {
-    events() {
-      return [
-        {
-          id: 5928101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event.",
-          location: "Meow Town",
-          date: "January 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Laydee",
-        },
-        {
-          id: 5928101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event.",
-          location: "Meow Town",
-          date: "January 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Laydee",
-        },
-        {
-          id: 5928101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event.",
-          location: "Meow Town",
-          date: "January 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Laydee",
-        },
-        {
-          id: 5928101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event.",
-          location: "Meow Town",
-          date: "January 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Laydee",
-        },
-        {
-          id: 5928101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event.",
-          location: "Meow Town",
-          date: "January 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Laydee",
-        },
-      ];
-    },
+
+  data() {
+    return {
+      events: [],
+    };
+  },
+
+  methods: {
+    ...mapActions("event", ["getEventList"]),
+  },
+
+  computed: {},
+
+  async created() {
+    this.events = await this.getEventList();
   },
 };
 </script>
