@@ -1,6 +1,5 @@
 <template>
   <div class="m-auto">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <event-card :events="events"></event-card>
   </div>
 </template>
