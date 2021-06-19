@@ -1,28 +1,23 @@
-import { fetchEventList } from "./eventService";
-
-// const [SET_EVENT_LIST] = "SET_EVENT_LIST";
+import { fetchEventList, fetchEventDetails } from "./eventService";
 
 export default {
   namespaced: true,
 
   state: {},
 
-  getters: {
-    // getEvents(state) {
-    //   return state.eventsCollection;
-    // },
-  },
+  getters: {},
 
-  mutations: {
-    // SET_EVENT_LIST(state, eventList) {
-    //   state.eventsCollection = eventList;
-    // },
-  },
+  mutations: {},
 
   actions: {
     async getEventList() {
       const eventList = await fetchEventList();
       return eventList;
+    },
+
+    async getEventDetails(id) {
+      const eventDetails = await fetchEventDetails(id);
+      return eventDetails;
     },
   },
 };

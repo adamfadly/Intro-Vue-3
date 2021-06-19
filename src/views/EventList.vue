@@ -1,6 +1,10 @@
 <template>
   <div class="m-auto">
-    <event-card :events="events"></event-card>
+    <event-card
+      v-for="(event, index) in events"
+      :key="index"
+      :event="event"
+    ></event-card>
   </div>
 </template>
 
@@ -28,6 +32,7 @@ export default {
 
   async created() {
     this.events = await this.getEventList();
+    console.log(this.events);
   },
 };
 </script>
