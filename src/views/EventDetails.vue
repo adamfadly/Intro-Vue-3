@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>{{ event.title }}</h1>
-    <p class="text-bold">{{ event.time }} @ {{ event.location }}</p>
-    <p>{{ event.description }}</p>
+    <h1 class="font-bold">{{ event.title }}</h1>
+    <p class="text-green-300">{{ event.time }} @ {{ event.location }}</p>
+    <p class="text-purple-400">{{ event.description }}</p>
   </div>
 </template>
 
@@ -22,9 +22,6 @@ export default {
 
   async created() {
     this.event = await this.getEventDetails(this.id);
-    console.log(this.getEventDetails(this.id), "detail");
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
